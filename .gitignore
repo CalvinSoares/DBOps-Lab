@@ -1,0 +1,44 @@
+# Segredos e configurações locais
+.env
+.env.*
+!.env.example
+
+# Documentação e instruções mantidas somente no ambiente local
+/docs/
+/AGENTS.md
+
+# Dados persistentes e artefatos de bancos
+data/
+postgres/data/
+mysql/data/
+sqlserver/data/
+*.dump
+*.dump.gz
+*.sql.gz
+*.bak
+*.trn
+*.mdf
+*.ldf
+
+# Logs e evidências potencialmente sensíveis
+logs/
+*.log
+evidence/**/raw/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Ferramentas e sistema operacional
+.idea/
+.vscode/
+*.swp
+Thumbs.db
+.DS_Store
+
+# Estado local do Grafana
+monitoring/grafana/data/
