@@ -18,7 +18,7 @@ Esta pasta contém runbooks para operar o laboratório sob falha. O objetivo é 
 | Exclusão acidental | [`01-delete-data.md`](01-delete-data.md) | planejamento | runbook criado |
 | PITR para horário específico | [`02-pitr.md`](02-pitr.md) | planejamento; PITR já validado na Fase 2 | evidência anterior reutilizada |
 | Disco cheio | [`03-disk-full.md`](03-disk-full.md) | planejamento | não executado por risco operacional |
-| Banco indisponível | [`04-database-down.md`](04-database-down.md) | planejamento | não executado por interromper o serviço |
+| Banco indisponível | [`04-database-down.md`](04-database-down.md) | `python automation/run_database_down.py --execute` | game day isolado validado |
 | Query lenta | [`05-slow-query.md`](05-slow-query.md) | `--execute` | game day controlado |
 | Lock/deadlock | [`06-lock.md`](06-lock.md) | `--execute` | game day controlado |
 | Atraso de réplica | [`07-replication-lag.md`](07-replication-lag.md) | planejamento | não aplicável sem réplica |

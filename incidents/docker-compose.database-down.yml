@@ -1,0 +1,48 @@
+services:
+  incident-postgres:
+    image: ${POSTGRES_IMAGE}
+    environment:
+      POSTGRES_DB: incident_db
+      POSTGRES_USER: incident_admin
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    networks:
+      - incident
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U incident_admin -d incident_db"]
+      interval: 2s
+      timeout: 2s
+      retries: 15
+    volumes:
+      - incident_postgres_data:/var/lib/postgresql/data
+
+  incident-exporter:
+    image: ${POSTGRES_EXPORTER_IMAGE}
+    environment:
+      DATA_SOURCE_NAME: postgresql://incident_admin:${POSTGRES_PASSWORD}@incident-postgres:5432/incident_db?sslmode=disable
+    networks:
+      - incident
+    depends_on:
+      incident-postgres:
+        condition: service_healthy
+
+  incident-prometheus:
+    image: ${PROMETHEUS_IMAGE}
+    ports:
+      - "19090:9090"
+    networks:
+      - incident
+    volumes:
+      - ./prometheus.database-down.yml:/etc/prometheus/prometheus.yml:ro
+      - incident_prometheus_data:/prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+    depends_on:
+      - incident-exporter
+
+networks:
+  incident:
+
+volumes:
+  incident_postgres_data:
+  incident_prometheus_data:
