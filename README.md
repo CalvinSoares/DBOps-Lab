@@ -1,86 +1,252 @@
 # DB Operations Lab — Resilient Multi-Database Platform
 
-Projeto de portfólio para DBA/Database Infrastructure com viés DevOps.
+Laboratório reproduzível de DBA/DevOps para PostgreSQL, MySQL/MariaDB e SQL Server: provisionamento, backup/restauração, PITR, performance, observabilidade e resposta a incidentes.
 
-**Descrição sugerida para o GitHub:**
+Repositório: [github.com/CalvinSoares/DBOps-Lab](https://github.com/CalvinSoares/DBOps-Lab)
 
-> Laboratório reproduzível de DBA/DevOps para PostgreSQL, MySQL/MariaDB e SQL Server: provisionamento, backup/restauração, PITR, performance, observabilidade e resposta a incidentes.
+## Sobre o projeto
 
-**Repositório:** [github.com/CalvinSoares/DBOps-Lab](https://github.com/CalvinSoares/DBOps-Lab)
+Este projeto simula uma plataforma operacional de bancos de dados para um ambiente de e-commerce ou chamados. O PostgreSQL é o banco principal e concentra a implementação mais completa. MySQL/MariaDB e SQL Server são extensões operacionais planejadas para demonstrar procedimentos equivalentes em outros ecossistemas.
 
-## Pré-requisitos da Fase 0
+O laboratório foi construído para demonstrar:
 
-- Docker Engine ou Docker Desktop com Docker Compose;
-- Python 3.12 ou compatível para as fases de automação;
-- Linux como caminho principal de execução;
-- Windows documentado posteriormente para SQL Server Developer;
-- pelo menos as portas `5432` (PostgreSQL), `9090` (Prometheus) e `3000` (Grafana) livres quando os perfis correspondentes forem usados.
+- provisionamento automatizado e idempotente;
+- usuários, roles e permissões separadas;
+- migrations e health checks;
+- backup lógico, backup físico e WAL;
+- recuperação point-in-time (PITR);
+- testes reais de restauração;
+- diagnóstico de queries, índices e locks;
+- métricas com Prometheus e Grafana;
+- runbooks e simulações de incidentes;
+- automação operacional com Python e Docker.
 
-Plataforma de laboratório multi-banco para demonstrar administração de bancos em produção, recuperação de dados, investigação de performance, automação e observabilidade.
+## Arquitetura
+
+~~~text
+                         ┌─────────────────────┐
+                         │  CLI Python dbops   │
+                         │  provision/backup   │
+                         │  restore/PITR/check │
+                         └──────────┬──────────┘
+                                    │
+┌──────────────────┐       ┌────────▼─────────┐       ┌──────────────────┐
+│ Aplicação/testes │──────▶│ PostgreSQL 16.4  │──────▶│ Backup + WAL     │
+└──────────────────┘       │ volume persist.  │       │ dump/basebackup  │
+                           └────────┬─────────┘       └──────────────────┘
+                                    │ métricas
+                           ┌────────▼─────────┐
+                           │ PostgreSQL       │
+                           │ Exporter         │
+                           └────────┬─────────┘
+                                    │ scrape
+                    ┌───────────────▼───────────────┐
+                    │ Prometheus                    │
+                    │ séries e alertas               │
+                    └───────────────┬───────────────┘
+                                    │ PromQL
+                    ┌───────────────▼───────────────┐
+                    │ Grafana                       │
+                    │ dashboard operacional         │
+                    └───────────────────────────────┘
+~~~
+
+O ambiente principal roda em Docker Compose. O PostgreSQL usa volume persistente. Backups, WAL e evidências ficam separados do volume de dados para que possam ser inspecionados e restaurados.
 
 ## Evidências de competência
 
-O README final deverá começar com evidências verificáveis de:
+As principais evidências já produzidas são:
 
-- instalação e provisionamento automatizados;
-- backup lógico, físico e restauração;
-- PITR no PostgreSQL;
-- tuning com planos antes/depois e medições reais;
-- monitoramento com Prometheus/Grafana;
-- automação operacional em Python;
-- incidentes simulados e resolvidos.
+- provisionamento e permissões: [automation/dbops.py](automation/dbops.py);
+- backup e PITR: [postgres/](postgres/) e [evidence/phase-0/round-007.md](evidence/phase-0/round-007.md);
+- tuning antes/depois: [benchmarks/postgres/runs/20261004T000351Z_a48486b9/result.json](benchmarks/postgres/runs/20261004T000351Z_a48486b9/result.json);
+- observabilidade validada: [evidence/phase-0/monitoring-result-20261004T165141Z.json](evidence/phase-0/monitoring-result-20261004T165141Z.json);
+- game day de indisponibilidade: [evidence/phase-5/incident-database-down-20261004T165037Z.json](evidence/phase-5/incident-database-down-20261004T165037Z.json);
+- runbooks operacionais: [incidents/](incidents/).
 
-Nenhuma métrica será inventada. Tempos, RPO, RTO e ganhos de performance só entram aqui depois de serem gerados e armazenados em `benchmarks/` ou `evidence/`.
+Os números apresentados no projeto vêm de artefatos de execução. Metas de RPO/RTO não são tratadas como resultados até que sejam medidas em um teste correspondente.
 
-## Fluxo PostgreSQL validado até aqui
+## Pré-requisitos
 
-O núcleo PostgreSQL já possui provisionamento idempotente, health check, backup lógico, backup físico com `pg_basebackup`, arquivamento de WAL, verificação com `pg_verifybackup`, restore lógico isolado, PITR em container separado, benchmark de tuning com plano antes/depois e locks, stack de observabilidade com Prometheus/Grafana e três game days controlados de incidentes. As evidências estão em [`evidence/phase-0/round-007.md`](evidence/phase-0/round-007.md), [`evidence/phase-0/round-009.md`](evidence/phase-0/round-009.md), [`evidence/phase-0/round-010.md`](evidence/phase-0/round-010.md) e [`benchmarks/postgres/runs/20261004T000351Z_a48486b9/result.json`](benchmarks/postgres/runs/20261004T000351Z_a48486b9/result.json).
+- Docker Engine ou Docker Desktop com Docker Compose;
+- Python 3.12 ou compatível;
+- PowerShell, Linux shell ou ambiente equivalente;
+- pelo menos 2 GB livres para imagens, banco e backups;
+- portas livres: 15432, 9090, 3000, 9187 e 19100.
 
-Comandos principais:
+O caminho principal de execução é Linux via Docker/WSL2. SQL Server será documentado separadamente para Windows/VM quando essa extensão for adicionada.
 
-```powershell
+## Instalação rápida
+
+Clone o repositório e entre na pasta do projeto:
+
+~~~powershell
+git clone https://github.com/CalvinSoares/DBOps-Lab.git
+Set-Location DBOps-Lab
+~~~
+
+Crie o ambiente local:
+
+~~~powershell
+Copy-Item .env.example .env
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r automation/requirements.txt
+~~~
+
+Edite o .env local e substitua as senhas de laboratório. O arquivo .env é ignorado pelo Git e não deve ser publicado.
+
+## Executar o PostgreSQL
+
+Suba o banco principal:
+
+~~~powershell
+docker compose up -d postgres
+~~~
+
+Aplique roles e migrations:
+
+~~~powershell
 python automation/dbops.py provision
+~~~
+
+Valide conectividade, versão, migrations, permissões e espaço:
+
+~~~powershell
 python automation/dbops.py health-check
+~~~
+
+O provisionamento é idempotente. Pode ser executado novamente sem reaplicar migrations já registradas.
+
+## Operações de backup e recuperação
+
+Backup lógico:
+
+~~~powershell
+python automation/dbops.py backup
+~~~
+
+Backup físico:
+
+~~~powershell
+python automation/dbops.py backup --type physical
+~~~
+
+Os dois tipos:
+
+~~~powershell
 python automation/dbops.py backup --type both
-python automation/dbops.py verify-backup <artefato>
-python automation/dbops.py pitr --base-artifact <backup-fisico> --cleanup
-```
+~~~
 
-Os cenários destrutivos de disco cheio e indisponibilidade, as métricas de idade/falha de backup, MySQL/MariaDB e SQL Server permanecem nas próximas fases. Os game days controlados de query lenta, lock e backup inválido foram medidos; isso não é apresentado como alta disponibilidade ou experiência de produção.
+Verificar um backup lógico:
 
-## Ordem de execução
+~~~powershell
+python automation/dbops.py verify-backup <arquivo.dump>
+~~~
 
-1. PostgreSQL, Docker Compose, Linux, CLI Python e documentação operacional.
-2. Backup/restore, PITR e teste automático de recuperação.
-3. Tuning, locks, queries lentas e evidências comparáveis.
-4. Prometheus/Grafana, exporters e alertas operacionais.
-5. MySQL/MariaDB como banco secundário.
-6. SQL Server Developer com runbook para Windows.
-7. Kubernetes como etapa opcional e explicitamente limitada.
+Restaurar em banco isolado:
 
-O plano detalhado está em [`docs/PROJECT_PLAN.md`](docs/PROJECT_PLAN.md). As regras para agentes estão em [`AGENTS.md`](AGENTS.md), os checks em [`docs/CHECKS.md`](docs/CHECKS.md) e a matriz de evidências em [`docs/EVIDENCE_MATRIX.md`](docs/EVIDENCE_MATRIX.md).
+~~~powershell
+python automation/dbops.py restore <arquivo.dump>
+~~~
 
-## Estrutura prevista
+Verificar arquivamento de WAL:
 
-```text
-dbops-lab/
-├── AGENTS.md
-├── docker-compose.yml
-├── README.md
-├── architecture/
-├── automation/
-├── postgres/
-├── mysql/
-├── sqlserver/
-├── monitoring/
-├── kubernetes/
-├── migrations/
-├── incidents/
-├── benchmarks/
-├── evidence/
-└── tests/
-```
+~~~powershell
+python automation/dbops.py wal-status
+~~~
 
-## Escopo inicial
+Executar PITR em cluster separado:
 
-O primeiro incremento deve provar um fluxo completo no PostgreSQL: provisionar, aplicar migration, verificar saúde, executar backup, restaurar em ambiente separado, validar dados e registrar evidências. Os demais bancos entram depois, sem bloquear a entrega do núcleo.
+~~~powershell
+python automation/dbops.py pitr --base-artifact <diretorio-do-backup-fisico> --cleanup
+~~~
+
+O backup lógico gera manifesto e SHA-256. O backup físico gera backup_manifest, manifesto externo e validação com pg_verifybackup. O PITR usa o backup físico, os WALs arquivados e um horário-alvo.
+
+## Performance e diagnóstico
+
+Executar o benchmark PostgreSQL:
+
+~~~powershell
+python automation/benchmark_postgres.py --rows 200000 --cleanup
+~~~
+
+O benchmark registra:
+
+- plano antes e depois;
+- EXPLAIN (ANALYZE, BUFFERS);
+- tempo de execução;
+- buffers lidos e encontrados;
+- linhas removidas pelo filtro;
+- índice aplicado;
+- estatísticas após ANALYZE;
+- sessão bloqueadora e sessão aguardando.
+
+## Monitoramento
+
+Subir o banco junto com Prometheus, Grafana e exporters:
+
+~~~powershell
+docker compose --profile monitoring up -d
+python automation/check_monitoring.py
+~~~
+
+Acessos locais:
+
+- Grafana: [http://localhost:3000](http://localhost:3000)
+- Prometheus: [http://localhost:9090](http://localhost:9090)
+- PostgreSQL Exporter: [http://localhost:9187/metrics](http://localhost:9187/metrics)
+- Node Exporter: [http://localhost:19100/metrics](http://localhost:19100/metrics)
+
+O dashboard acompanha disponibilidade, conexões, tamanho, transações, deadlocks, queries ativas, idade de query, locks, idade/falha de backup, CPU e memória.
+
+## Incidentes e game days
+
+Os runbooks estão em [incidents/](incidents/). O executor geral usa dry-run por padrão:
+
+~~~powershell
+python automation/run_incident.py slow-query
+~~~
+
+Game days controlados:
+
+~~~powershell
+python automation/run_incident.py slow-query --execute --duration 20 --observe-prometheus
+python automation/run_incident.py lock --execute --observe-prometheus
+python automation/run_incident.py backup-invalid --execute
+~~~
+
+O game day isolado de indisponibilidade usa outro projeto Compose e não interrompe o banco principal:
+
+~~~powershell
+python automation/run_database_down.py
+python automation/run_database_down.py --execute
+~~~
+
+Operações destrutivas no banco principal, como parar o serviço ou preencher disco, não são executadas automaticamente. Elas exigem ambiente descartável, janela autorizada e procedimento de recuperação.
+
+## Status operacional atual
+
+O núcleo PostgreSQL, os backups, PITR, tuning, observabilidade e os principais game days estão implementados e possuem evidências. MySQL/MariaDB e SQL Server ainda serão adicionados como extensões operacionais. Kubernetes é opcional e não substitui backup, replicação ou alta disponibilidade.
+
+## Estrutura do repositório
+
+~~~text
+.
+├── automation/       # CLI, checks e game days Python
+├── benchmarks/       # planos e medições de performance
+├── incidents/        # runbooks e Compose descartável
+├── migrations/       # schema e controle de migrations
+├── monitoring/       # Prometheus, Grafana, exporters e alertas
+├── postgres/         # backups, WAL e recuperação
+├── mysql/            # extensão MySQL/MariaDB
+├── sqlserver/        # documentação SQL Server/Windows
+├── kubernetes/       # etapa opcional stateful
+├── evidence/         # resultados reproduzíveis das execuções
+└── tests/            # testes automatizados
+~~~
+
+## Segurança e escopo
+
+Este é um projeto de laboratório. Não use as senhas de exemplo em produção, não versione .env, dumps, tokens ou dados reais. Antes de apresentar o projeto, substitua qualquer métrica de exemplo por evidência produzida no seu próprio ambiente.
