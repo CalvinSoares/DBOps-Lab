@@ -1,0 +1,20 @@
+{
+  "alert_rule_groups": 1,
+  "backup_age_series": 1,
+  "backup_failed_logical": "0",
+  "backup_failed_series": 1,
+  "dashboard_panels": 10,
+  "exporter_metrics_http": 200,
+  "grafana_dashboard_http": 200,
+  "grafana_health_http": 200,
+  "grafana_port": "3000",
+  "latency_series": 1,
+  "lock_wait_series": 1,
+  "node_cpu_series": 96,
+  "node_target_up": "1",
+  "pg_up": "1",
+  "postgres_target_up": "1",
+  "prometheus_port": "9090",
+  "timestamp": "2026-10-04T00:36:57.792221+00:00",
+  "validated": true
+}

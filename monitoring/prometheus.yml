@@ -7,5 +7,13 @@ scrape_configs:
     static_configs:
       - targets: ["localhost:9090"]
 
-# O exporter do PostgreSQL será adicionado na fase de observabilidade,
-# depois que a role de monitoramento e suas permissões mínimas existirem.
+  - job_name: postgresql
+    static_configs:
+      - targets: ["postgres-exporter:9187"]
+
+  - job_name: node
+    static_configs:
+      - targets: ["node-exporter:9100"]
+
+rule_files:
+  - /etc/prometheus/alerts.yml

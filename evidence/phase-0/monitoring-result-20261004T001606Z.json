@@ -1,0 +1,15 @@
+{
+  "alert_rule_groups": 1,
+  "dashboard_panels": 7,
+  "exporter_metrics_http": 200,
+  "grafana_dashboard_http": 200,
+  "grafana_health_http": 200,
+  "grafana_port": "3000",
+  "node_cpu_series": 96,
+  "node_target_up": "1",
+  "pg_up": "1",
+  "postgres_target_up": "1",
+  "prometheus_port": "9090",
+  "timestamp": "2026-10-04T00:16:06.286029+00:00",
+  "validated": true
+}
