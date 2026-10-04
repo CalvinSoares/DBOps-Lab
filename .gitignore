@@ -12,6 +12,16 @@ data/
 postgres/data/
 mysql/data/
 sqlserver/data/
+postgres/backup/artifacts/*
+!postgres/backup/artifacts/.gitkeep
+!postgres/backup/artifacts/*.manifest.json
+postgres/backup/physical/*
+!postgres/backup/physical/.gitkeep
+!postgres/backup/physical/*.manifest.json
+postgres/backup/wal/*
+!postgres/backup/wal/.gitkeep
+postgres/recovery/*
+!postgres/recovery/.gitkeep
 *.dump
 *.dump.gz
 *.sql.gz

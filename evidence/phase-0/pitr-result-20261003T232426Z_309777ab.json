@@ -1,0 +1,16 @@
+{
+  "base_backup": "dbops_20261003T230613Z",
+  "container": "dbops_pitr_20261003t232426z_309777ab",
+  "target_time": "2026-10-03T23:24:27.206734+00:00",
+  "incident_time": "2026-10-03T23:24:27.207460+00:00",
+  "marker": "6de5e05312d34670ae1ef90f3e7eaecb",
+  "switch_lsn": "0/12000690",
+  "duration_seconds": 37.094,
+  "recovery_directory": "postgres\\recovery\\pitr_20261003T232426Z_309777ab",
+  "before_marker_count": 1,
+  "after_marker_count": 0,
+  "recovery_in_progress": false,
+  "validated": true,
+  "source_markers_cleaned": true,
+  "evidence_file": "evidence\\phase-0\\pitr-result-20261003T232426Z_309777ab.json"
+}

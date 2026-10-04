@@ -1,0 +1,10 @@
+{
+  "artifact": "dbops_20261003T230613Z",
+  "artifact_type": "physical",
+  "created_at": "2026-10-03T23:06:39.027707+00:00",
+  "database": "dbops",
+  "engine": "postgresql",
+  "file_count": 1613,
+  "sha256": "2247c189f3b3dd108b2dfc20e3433adbfff81116dd3c306860717fdac3d2365d",
+  "size_bytes": 72796313
+}
