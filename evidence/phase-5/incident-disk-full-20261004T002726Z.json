@@ -1,0 +1,32 @@
+{
+  "engine": "postgresql",
+  "incident": "disk-full",
+  "mode": "dry-run",
+  "plan": [
+    "medir espa\u00e7o livre e identificar o filesystem afetado",
+    "conter escrita n\u00e3o essencial e preservar logs",
+    "liberar somente artefatos tempor\u00e1rios aprovados",
+    "confirmar espa\u00e7o, sa\u00fade do banco e integridade das aplica\u00e7\u00f5es"
+  ],
+  "started_at": "2026-10-04T00:27:26.885230+00:00",
+  "status": "planned",
+  "steps": [
+    {
+      "name": "medir espa\u00e7o livre e identificar o filesystem afetado",
+      "status": "planned"
+    },
+    {
+      "name": "conter escrita n\u00e3o essencial e preservar logs",
+      "status": "planned"
+    },
+    {
+      "name": "liberar somente artefatos tempor\u00e1rios aprovados",
+      "status": "planned"
+    },
+    {
+      "name": "confirmar espa\u00e7o, sa\u00fade do banco e integridade das aplica\u00e7\u00f5es",
+      "status": "planned"
+    }
+  ],
+  "validated": false
+}

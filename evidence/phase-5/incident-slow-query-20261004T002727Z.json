@@ -1,0 +1,32 @@
+{
+  "engine": "postgresql",
+  "incident": "slow-query",
+  "mode": "dry-run",
+  "plan": [
+    "observar sess\u00e3o ativa em pg_stat_activity",
+    "capturar idade, wait event e plano quando aplic\u00e1vel",
+    "cancelar somente a sess\u00e3o do game day",
+    "confirmar retorno da lat\u00eancia e registrar causa/a\u00e7\u00e3o"
+  ],
+  "started_at": "2026-10-04T00:27:27.086858+00:00",
+  "status": "planned",
+  "steps": [
+    {
+      "name": "observar sess\u00e3o ativa em pg_stat_activity",
+      "status": "planned"
+    },
+    {
+      "name": "capturar idade, wait event e plano quando aplic\u00e1vel",
+      "status": "planned"
+    },
+    {
+      "name": "cancelar somente a sess\u00e3o do game day",
+      "status": "planned"
+    },
+    {
+      "name": "confirmar retorno da lat\u00eancia e registrar causa/a\u00e7\u00e3o",
+      "status": "planned"
+    }
+  ],
+  "validated": false
+}

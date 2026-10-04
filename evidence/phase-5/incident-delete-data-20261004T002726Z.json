@@ -1,0 +1,32 @@
+{
+  "engine": "postgresql",
+  "incident": "delete-data",
+  "mode": "dry-run",
+  "plan": [
+    "identificar o hor\u00e1rio e o conjunto de dados afetado",
+    "preservar logs e criar uma c\u00f3pia de seguran\u00e7a antes da recupera\u00e7\u00e3o",
+    "usar PITR em cluster separado at\u00e9 imediatamente antes do incidente",
+    "comparar contagens e amostras antes de promover a recupera\u00e7\u00e3o"
+  ],
+  "started_at": "2026-10-04T00:27:26.683274+00:00",
+  "status": "planned",
+  "steps": [
+    {
+      "name": "identificar o hor\u00e1rio e o conjunto de dados afetado",
+      "status": "planned"
+    },
+    {
+      "name": "preservar logs e criar uma c\u00f3pia de seguran\u00e7a antes da recupera\u00e7\u00e3o",
+      "status": "planned"
+    },
+    {
+      "name": "usar PITR em cluster separado at\u00e9 imediatamente antes do incidente",
+      "status": "planned"
+    },
+    {
+      "name": "comparar contagens e amostras antes de promover a recupera\u00e7\u00e3o",
+      "status": "planned"
+    }
+  ],
+  "validated": false
+}

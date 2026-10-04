@@ -1,0 +1,32 @@
+{
+  "engine": "postgresql",
+  "incident": "backup-invalid",
+  "mode": "dry-run",
+  "plan": [
+    "copiar um dump para um nome tempor\u00e1rio isolado",
+    "alterar somente a c\u00f3pia e preservar o artefato original",
+    "executar verify-backup e exigir falha de checksum ou formato",
+    "remover a c\u00f3pia inv\u00e1lida e confirmar que o backup original continua v\u00e1lido"
+  ],
+  "started_at": "2026-10-04T00:27:27.423367+00:00",
+  "status": "planned",
+  "steps": [
+    {
+      "name": "copiar um dump para um nome tempor\u00e1rio isolado",
+      "status": "planned"
+    },
+    {
+      "name": "alterar somente a c\u00f3pia e preservar o artefato original",
+      "status": "planned"
+    },
+    {
+      "name": "executar verify-backup e exigir falha de checksum ou formato",
+      "status": "planned"
+    },
+    {
+      "name": "remover a c\u00f3pia inv\u00e1lida e confirmar que o backup original continua v\u00e1lido",
+      "status": "planned"
+    }
+  ],
+  "validated": false
+}

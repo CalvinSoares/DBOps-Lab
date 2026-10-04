@@ -1,0 +1,1115 @@
+{
+  "engine": "postgresql",
+  "incident": "lock",
+  "mode": "execute",
+  "observed": {
+    "holder_pid": 5177,
+    "observations": [
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      },
+      {
+        "blocking_pids": [
+          5177
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 5178
+      }
+    ],
+    "prometheus": {
+      "after": {
+        "query": "dbops_lock_waits_blocked_queries{datname=\"dbops\"}",
+        "series": [
+          {
+            "metric": {
+              "__name__": "dbops_lock_waits_blocked_queries",
+              "datname": "dbops",
+              "instance": "postgres-exporter:9187",
+              "job": "postgresql",
+              "server": "postgres:5432"
+            },
+            "value": [
+              1791074468.132,
+              "1"
+            ]
+          }
+        ],
+        "timestamp": "2026-10-04T00:41:08.133689+00:00"
+      },
+      "before": {
+        "query": "dbops_lock_waits_blocked_queries{datname=\"dbops\"}",
+        "series": [
+          {
+            "metric": {
+              "__name__": "dbops_lock_waits_blocked_queries",
+              "datname": "dbops",
+              "instance": "postgres-exporter:9187",
+              "job": "postgresql",
+              "server": "postgres:5432"
+            },
+            "value": [
+              1791074447.958,
+              "0"
+            ]
+          }
+        ],
+        "timestamp": "2026-10-04T00:40:47.959724+00:00"
+      },
+      "blocked_after": 1.0,
+      "blocked_before": 0.0,
+      "blocked_during": 1.0,
+      "during": {
+        "query": "dbops_lock_waits_blocked_queries{datname=\"dbops\"}",
+        "series": [
+          {
+            "metric": {
+              "__name__": "dbops_lock_waits_blocked_queries",
+              "datname": "dbops",
+              "instance": "postgres-exporter:9187",
+              "job": "postgresql",
+              "server": "postgres:5432"
+            },
+            "value": [
+              1791074455.221,
+              "1"
+            ]
+          }
+        ],
+        "timestamp": "2026-10-04T00:40:55.223875+00:00"
+      },
+      "query": "dbops_lock_waits_blocked_queries{datname=\"dbops\"}",
+      "validated": true
+    },
+    "table": "incident_lab_lock_demo",
+    "validated": true,
+    "waiter_completed": false,
+    "waiter_error_type": "LockNotAvailable",
+    "waiter_pid": 5178,
+    "waiter_sqlstate": "55P03"
+  },
+  "plan": [
+    "identificar PID bloqueador e PID aguardando",
+    "capturar wait_event e pg_blocking_pids",
+    "encerrar ou fazer rollback apenas da sess\u00e3o do cen\u00e1rio",
+    "confirmar que a fila foi liberada"
+  ],
+  "started_at": "2026-10-04T00:40:47.773439+00:00",
+  "status": "validated",
+  "steps": [
+    {
+      "name": "identificar PID bloqueador e PID aguardando",
+      "status": "executed"
+    },
+    {
+      "name": "capturar wait_event e pg_blocking_pids",
+      "status": "executed"
+    },
+    {
+      "name": "encerrar ou fazer rollback apenas da sess\u00e3o do cen\u00e1rio",
+      "status": "executed"
+    },
+    {
+      "name": "confirmar que a fila foi liberada",
+      "status": "executed"
+    }
+  ],
+  "validated": true
+}

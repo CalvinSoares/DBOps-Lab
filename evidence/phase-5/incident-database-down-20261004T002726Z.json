@@ -1,0 +1,32 @@
+{
+  "engine": "postgresql",
+  "incident": "database-down",
+  "mode": "dry-run",
+  "plan": [
+    "confirmar indisponibilidade por health check e endpoint do exporter",
+    "separar falha de processo, rede, volume e configura\u00e7\u00e3o",
+    "recuperar o servi\u00e7o sem apagar o volume persistente",
+    "executar health check e validar m\u00e9tricas ap\u00f3s o retorno"
+  ],
+  "started_at": "2026-10-04T00:27:26.984958+00:00",
+  "status": "planned",
+  "steps": [
+    {
+      "name": "confirmar indisponibilidade por health check e endpoint do exporter",
+      "status": "planned"
+    },
+    {
+      "name": "separar falha de processo, rede, volume e configura\u00e7\u00e3o",
+      "status": "planned"
+    },
+    {
+      "name": "recuperar o servi\u00e7o sem apagar o volume persistente",
+      "status": "planned"
+    },
+    {
+      "name": "executar health check e validar m\u00e9tricas ap\u00f3s o retorno",
+      "status": "planned"
+    }
+  ],
+  "validated": false
+}

@@ -1,0 +1,40 @@
+{
+  "engine": "postgresql",
+  "incident": "backup-invalid",
+  "mode": "execute",
+  "observed": {
+    "detected": true,
+    "detected_error_type": "ValidationError",
+    "invalid_copy": "incident_invalid_20261004T002829Z.dump",
+    "source_artifact": "dbops_20261003T225857Z.dump",
+    "source_still_valid": true,
+    "validated": true
+  },
+  "plan": [
+    "copiar um dump para um nome tempor\u00e1rio isolado",
+    "alterar somente a c\u00f3pia e preservar o artefato original",
+    "executar verify-backup e exigir falha de checksum ou formato",
+    "remover a c\u00f3pia inv\u00e1lida e confirmar que o backup original continua v\u00e1lido"
+  ],
+  "started_at": "2026-10-04T00:28:29.282377+00:00",
+  "status": "validated",
+  "steps": [
+    {
+      "name": "copiar um dump para um nome tempor\u00e1rio isolado",
+      "status": "executed"
+    },
+    {
+      "name": "alterar somente a c\u00f3pia e preservar o artefato original",
+      "status": "executed"
+    },
+    {
+      "name": "executar verify-backup e exigir falha de checksum ou formato",
+      "status": "executed"
+    },
+    {
+      "name": "remover a c\u00f3pia inv\u00e1lida e confirmar que o backup original continua v\u00e1lido",
+      "status": "executed"
+    }
+  ],
+  "validated": true
+}

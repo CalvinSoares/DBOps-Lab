@@ -1,0 +1,586 @@
+{
+  "engine": "postgresql",
+  "incident": "slow-query",
+  "mode": "execute",
+  "observed": {
+    "completed": true,
+    "observations": [
+      {
+        "age_seconds": 0.003,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 0.259,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 0.512,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 0.766,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 1.019,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 1.274,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 1.526,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 1.778,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 2.031,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 2.283,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 2.536,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 2.788,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 3.04,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 3.292,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 3.543,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 3.795,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 4.048,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 4.299,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 4.552,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 4.804,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 5.057,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 5.309,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 5.561,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 5.813,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 6.065,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 6.318,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 6.57,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 6.823,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 7.075,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 7.328,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 7.58,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 7.832,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 8.085,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 8.337,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 8.589,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 8.841,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 9.093,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 9.346,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 9.598,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 9.85,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 10.103,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 10.355,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 10.607,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 10.859,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 11.111,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 11.363,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 11.615,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 11.867,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 12.119,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 12.371,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 12.624,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 12.876,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 13.128,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 13.381,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 13.634,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 13.886,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 14.138,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 14.39,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 14.642,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 14.894,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 15.146,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 15.398,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 15.651,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 15.903,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 16.156,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 16.408,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 16.66,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 16.912,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 17.164,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 17.416,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 17.668,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 17.92,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 18.173,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 18.425,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 18.677,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 18.929,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 19.181,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 19.433,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 19.686,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      },
+      {
+        "age_seconds": 19.938,
+        "pid": 5158,
+        "wait_event": "PgSleep",
+        "wait_event_type": "Timeout"
+      }
+    ],
+    "observed_active": true,
+    "prometheus": {
+      "after": {
+        "query": "dbops_activity_max_query_age_seconds{datname=\"dbops\"}",
+        "series": [
+          {
+            "metric": {
+              "__name__": "dbops_activity_max_query_age_seconds",
+              "datname": "dbops",
+              "instance": "postgres-exporter:9187",
+              "job": "postgresql",
+              "server": "postgres:5432"
+            },
+            "value": [
+              1791074447.566,
+              "12.70211"
+            ]
+          }
+        ],
+        "timestamp": "2026-10-04T00:40:47.567590+00:00"
+      },
+      "before": {
+        "query": "dbops_activity_max_query_age_seconds{datname=\"dbops\"}",
+        "series": [
+          {
+            "metric": {
+              "__name__": "dbops_activity_max_query_age_seconds",
+              "datname": "dbops",
+              "instance": "postgres-exporter:9187",
+              "job": "postgresql",
+              "server": "postgres:5432"
+            },
+            "value": [
+              1791074427.354,
+              "0.002699"
+            ]
+          }
+        ],
+        "timestamp": "2026-10-04T00:40:27.354640+00:00"
+      },
+      "during": {
+        "query": "dbops_activity_max_query_age_seconds{datname=\"dbops\"}",
+        "series": [
+          {
+            "metric": {
+              "__name__": "dbops_activity_max_query_age_seconds",
+              "datname": "dbops",
+              "instance": "postgres-exporter:9187",
+              "job": "postgresql",
+              "server": "postgres:5432"
+            },
+            "value": [
+              1791074427.381,
+              "0.002699"
+            ]
+          }
+        ],
+        "timestamp": "2026-10-04T00:40:27.381901+00:00"
+      },
+      "max_age_after": 12.70211,
+      "max_age_before": 0.002699,
+      "max_age_during": 0.002699,
+      "query": "dbops_activity_max_query_age_seconds{datname=\"dbops\"}",
+      "validated": true
+    },
+    "requested_duration_seconds": 20,
+    "validated": true,
+    "worker_error": [],
+    "worker_pid": 5158
+  },
+  "plan": [
+    "observar sess\u00e3o ativa em pg_stat_activity",
+    "capturar idade, wait event e plano quando aplic\u00e1vel",
+    "cancelar somente a sess\u00e3o do game day",
+    "confirmar retorno da lat\u00eancia e registrar causa/a\u00e7\u00e3o"
+  ],
+  "started_at": "2026-10-04T00:40:27.174449+00:00",
+  "status": "validated",
+  "steps": [
+    {
+      "name": "observar sess\u00e3o ativa em pg_stat_activity",
+      "status": "executed"
+    },
+    {
+      "name": "capturar idade, wait event e plano quando aplic\u00e1vel",
+      "status": "executed"
+    },
+    {
+      "name": "cancelar somente a sess\u00e3o do game day",
+      "status": "executed"
+    },
+    {
+      "name": "confirmar retorno da lat\u00eancia e registrar causa/a\u00e7\u00e3o",
+      "status": "executed"
+    }
+  ],
+  "validated": true
+}

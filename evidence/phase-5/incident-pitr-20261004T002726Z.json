@@ -1,0 +1,32 @@
+{
+  "engine": "postgresql",
+  "incident": "pitr",
+  "mode": "dry-run",
+  "plan": [
+    "definir recovery_target_time em UTC antes do incidente",
+    "restaurar backup f\u00edsico e WAL em cluster descart\u00e1vel",
+    "validar marcador anterior presente e posterior ausente",
+    "registrar RPO/RTO observados sem assumir valores de meta"
+  ],
+  "started_at": "2026-10-04T00:27:26.786809+00:00",
+  "status": "planned",
+  "steps": [
+    {
+      "name": "definir recovery_target_time em UTC antes do incidente",
+      "status": "planned"
+    },
+    {
+      "name": "restaurar backup f\u00edsico e WAL em cluster descart\u00e1vel",
+      "status": "planned"
+    },
+    {
+      "name": "validar marcador anterior presente e posterior ausente",
+      "status": "planned"
+    },
+    {
+      "name": "registrar RPO/RTO observados sem assumir valores de meta",
+      "status": "planned"
+    }
+  ],
+  "validated": false
+}

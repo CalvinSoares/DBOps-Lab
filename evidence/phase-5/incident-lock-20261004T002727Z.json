@@ -1,0 +1,32 @@
+{
+  "engine": "postgresql",
+  "incident": "lock",
+  "mode": "dry-run",
+  "plan": [
+    "identificar PID bloqueador e PID aguardando",
+    "capturar wait_event e pg_blocking_pids",
+    "encerrar ou fazer rollback apenas da sess\u00e3o do cen\u00e1rio",
+    "confirmar que a fila foi liberada"
+  ],
+  "started_at": "2026-10-04T00:27:27.194284+00:00",
+  "status": "planned",
+  "steps": [
+    {
+      "name": "identificar PID bloqueador e PID aguardando",
+      "status": "planned"
+    },
+    {
+      "name": "capturar wait_event e pg_blocking_pids",
+      "status": "planned"
+    },
+    {
+      "name": "encerrar ou fazer rollback apenas da sess\u00e3o do cen\u00e1rio",
+      "status": "planned"
+    },
+    {
+      "name": "confirmar que a fila foi liberada",
+      "status": "planned"
+    }
+  ],
+  "validated": false
+}

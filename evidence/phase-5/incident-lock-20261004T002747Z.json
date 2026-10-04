@@ -1,0 +1,163 @@
+{
+  "engine": "postgresql",
+  "incident": "lock",
+  "mode": "execute",
+  "observed": {
+    "holder_pid": 4348,
+    "observations": [
+      {
+        "blocking_pids": [
+          4348
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 4349
+      },
+      {
+        "blocking_pids": [
+          4348
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 4349
+      },
+      {
+        "blocking_pids": [
+          4348
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 4349
+      },
+      {
+        "blocking_pids": [
+          4348
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 4349
+      },
+      {
+        "blocking_pids": [
+          4348
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 4349
+      },
+      {
+        "blocking_pids": [
+          4348
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 4349
+      },
+      {
+        "blocking_pids": [
+          4348
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 4349
+      },
+      {
+        "blocking_pids": [
+          4348
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 4349
+      },
+      {
+        "blocking_pids": [
+          4348
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 4349
+      },
+      {
+        "blocking_pids": [
+          4348
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 4349
+      },
+      {
+        "blocking_pids": [
+          4348
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 4349
+      },
+      {
+        "blocking_pids": [
+          4348
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 4349
+      },
+      {
+        "blocking_pids": [
+          4348
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 4349
+      },
+      {
+        "blocking_pids": [
+          4348
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 4349
+      },
+      {
+        "blocking_pids": [
+          4348
+        ],
+        "wait_event": "transactionid",
+        "wait_event_type": "Lock",
+        "waiter_pid": 4349
+      }
+    ],
+    "table": "incident_lab_lock_demo",
+    "validated": true,
+    "waiter_completed": false,
+    "waiter_error_type": "LockNotAvailable",
+    "waiter_pid": 4349,
+    "waiter_sqlstate": "55P03"
+  },
+  "plan": [
+    "identificar PID bloqueador e PID aguardando",
+    "capturar wait_event e pg_blocking_pids",
+    "encerrar ou fazer rollback apenas da sess\u00e3o do cen\u00e1rio",
+    "confirmar que a fila foi liberada"
+  ],
+  "started_at": "2026-10-04T00:27:45.606613+00:00",
+  "status": "validated",
+  "steps": [
+    {
+      "name": "identificar PID bloqueador e PID aguardando",
+      "status": "executed"
+    },
+    {
+      "name": "capturar wait_event e pg_blocking_pids",
+      "status": "executed"
+    },
+    {
+      "name": "encerrar ou fazer rollback apenas da sess\u00e3o do cen\u00e1rio",
+      "status": "executed"
+    },
+    {
+      "name": "confirmar que a fila foi liberada",
+      "status": "executed"
+    }
+  ],
+  "validated": true
+}
