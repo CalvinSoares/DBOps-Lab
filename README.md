@@ -32,12 +32,28 @@ O README final deverá começar com evidências verificáveis de:
 
 Nenhuma métrica será inventada. Tempos, RPO, RTO e ganhos de performance só entram aqui depois de serem gerados e armazenados em `benchmarks/` ou `evidence/`.
 
+## Fluxo PostgreSQL validado até aqui
+
+O núcleo PostgreSQL já possui provisionamento idempotente, health check, backup lógico, backup físico com `pg_basebackup`, arquivamento de WAL, verificação com `pg_verifybackup`, restore lógico isolado, PITR em container separado, benchmark de tuning com plano antes/depois e locks, stack de observabilidade com Prometheus/Grafana e três game days controlados de incidentes. As evidências estão em [`evidence/phase-0/round-007.md`](evidence/phase-0/round-007.md), [`evidence/phase-0/round-009.md`](evidence/phase-0/round-009.md), [`evidence/phase-0/round-010.md`](evidence/phase-0/round-010.md) e [`benchmarks/postgres/runs/20261004T000351Z_a48486b9/result.json`](benchmarks/postgres/runs/20261004T000351Z_a48486b9/result.json).
+
+Comandos principais:
+
+```powershell
+python automation/dbops.py provision
+python automation/dbops.py health-check
+python automation/dbops.py backup --type both
+python automation/dbops.py verify-backup <artefato>
+python automation/dbops.py pitr --base-artifact <backup-fisico> --cleanup
+```
+
+Os cenários destrutivos de disco cheio e indisponibilidade, as métricas de idade/falha de backup, MySQL/MariaDB e SQL Server permanecem nas próximas fases. Os game days controlados de query lenta, lock e backup inválido foram medidos; isso não é apresentado como alta disponibilidade ou experiência de produção.
+
 ## Ordem de execução
 
 1. PostgreSQL, Docker Compose, Linux, CLI Python e documentação operacional.
 2. Backup/restore, PITR e teste automático de recuperação.
 3. Tuning, locks, queries lentas e evidências comparáveis.
-4. Prometheus/Grafana e alertas operacionais.
+4. Prometheus/Grafana, exporters e alertas operacionais.
 5. MySQL/MariaDB como banco secundário.
 6. SQL Server Developer com runbook para Windows.
 7. Kubernetes como etapa opcional e explicitamente limitada.
