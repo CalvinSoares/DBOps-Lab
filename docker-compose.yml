@@ -74,6 +74,45 @@ services:
       - "${NODE_EXPORTER_PORT}:9100"
     restart: unless-stopped
 
+  mariadb:
+    image: ${MYSQL_IMAGE}
+    profiles: [secondary]
+    command: ["mariadbd", "--performance-schema=ON"]
+    environment:
+      MARIADB_DATABASE: ${MYSQL_DATABASE}
+      MARIADB_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MARIADB_USER: ${MYSQL_USER}
+      MARIADB_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "${MYSQL_PORT}:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d:ro
+      - ./mysql/backup:/var/lib/mysql/backups
+    healthcheck:
+      test: ["CMD-SHELL", "healthcheck.sh --connect --innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    restart: unless-stopped
+
+  mariadb-exporter:
+    image: ${MYSQL_EXPORTER_IMAGE}
+    profiles: [monitoring, secondary]
+    environment:
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - '{ echo "[client]"; echo "user=$${MYSQL_USER}"; echo "password=$${MYSQL_PASSWORD}"; echo "host=mariadb"; echo "port=3306"; } > /tmp/.my.cnf && exec mysqld_exporter --config.my-cnf=/tmp/.my.cnf'
+    ports:
+      - "${MYSQL_EXPORTER_PORT}:9104"
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    restart: unless-stopped
+
   grafana:
     image: ${GRAFANA_IMAGE}
     profiles: [monitoring]
@@ -94,3 +133,4 @@ volumes:
   postgres_data:
   prometheus_data:
   grafana_data:
+  mariadb_data:

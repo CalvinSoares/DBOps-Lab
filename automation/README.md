@@ -38,10 +38,13 @@ python automation/dbops.py wal-status
 python automation/dbops.py pitr --base-artifact <backup-fisico> --cleanup
 python automation/benchmark_postgres.py --rows 200000 --cleanup
 python automation/check_monitoring.py
+python automation/check_mariadb_monitoring.py
 python automation/run_incident.py slow-query
 python automation/run_incident.py slow-query --execute --duration 20 --observe-prometheus
 python automation/run_incident.py lock --execute --observe-prometheus
 python automation/run_incident.py backup-invalid --execute
+python automation/run_mariadb_down.py
+python automation/run_mariadb_down.py --execute
 ```
 
 O backup lógico é gravado em `postgres/backup/artifacts/` com formato custom do PostgreSQL e manifesto contendo tamanho e SHA-256. Para verificar e restaurar um artefato:
@@ -62,6 +65,37 @@ O benchmark PostgreSQL cria um schema sintético, coleta planos antes/depois com
 O check de observabilidade consulta Grafana, Prometheus e os exporters em execução. Ele valida o dashboard provisionado, as séries de disponibilidade, conexões, atividade, CPU e memória, as regras de alerta e a conectividade do exporter PostgreSQL. Cada execução aprovada grava um JSON em `evidence/phase-0/`.
 
 O executor de incidentes opera em `dry-run` por padrão. Query lenta e lock usam sessões temporárias com rollback/timeout; `--observe-prometheus` registra a série antes/durante/depois; `backup-invalid` altera apenas uma cópia temporária de um dump e revalida o original. Cenários de indisponibilidade, disco cheio, exclusão acidental e réplica ficam protegidos por runbooks e não são executados automaticamente.
+
+## MariaDB secundário
+
+O MariaDB é iniciado pelo profile `secondary` e possui uma CLI operacional própria:
+
+```powershell
+docker compose --profile secondary up -d mariadb
+python automation/mysqlops.py provision
+python automation/mysqlops.py health-check
+python automation/mysqlops.py seed
+python automation/mysqlops.py backup
+python automation/mysqlops.py verify-backup <arquivo.sql.gz>
+python automation/mysqlops.py restore <arquivo.sql.gz>
+python automation/benchmark_mysql.py --rows 50000 --repetitions 20
+```
+
+O ciclo validado cria o schema em `mysql/init/`, gera um dump lógico comprimido em `mysql/backup/`, grava manifesto com tamanho e SHA-256, verifica o gzip e restaura em um banco separado com validação das tabelas e contagens. O game day `run_mariadb_down.py` usa um Compose descartável sem volume persistente e nunca para o MariaDB principal.
+
+O benchmark do MariaDB cria uma tabela sintética, registra `EXPLAIN` antes e depois de um índice composto e consulta `events_statements_summary_by_digest`. Os artefatos e medições ficam em `benchmarks/mysql/runs/`.
+
+## SQL Server no Windows
+
+```powershell
+python automation/sqlserverops.py environment-check
+python automation/sqlserverops.py provision
+python automation/sqlserverops.py backup --type all
+python automation/sqlserverops.py backup --type full --compression
+python automation/sqlserverops.py performance-check --repetitions 20
+```
+
+A CLI usa `sqlcmd` com autenticação integrada, executa full/differential/transaction log, aplica `CHECKSUM` e chama `RESTORE VERIFYONLY`. A compressão é uma opção explícita: se a edição não suportar o recurso, a operação retorna código não zero e registra a limitação. O comando `performance-check` habilita Query Store no banco de laboratório, executa uma consulta controlada e coleta runtime stats e waits filtrados.
 
 ## Códigos de saída
 

@@ -3,8 +3,9 @@
 ## Subida do stack
 
 ```powershell
-docker compose --profile monitoring up -d
+docker compose --profile monitoring --profile secondary up -d
 python automation/check_monitoring.py
+python automation/check_mariadb_monitoring.py
 ```
 
 Serviços e portas padrão:
@@ -13,6 +14,7 @@ Serviços e portas padrão:
 - Prometheus: `9090`;
 - Grafana: `3000`;
 - PostgreSQL exporter: `9187`;
+- MariaDB exporter: `9188`;
 - node-exporter: `19100` no host local, `9100` dentro da rede Compose.
 
 O `postgres-exporter` usa a role `dbops_monitor`, que recebe `pg_monitor` durante o provisionamento. O `node-exporter` coleta métricas do ambiente Linux do Docker; no Docker Desktop/Windows isso representa a VM Linux do Docker, não todos os contadores nativos do Windows.
@@ -32,6 +34,10 @@ O dashboard `DBOps Lab — PostgreSQL Overview` é provisionado automaticamente 
 - CPU e memória do ambiente Linux monitorado.
 
 As regras em `alerts.yml` cobrem indisponibilidade do exporter, excesso de conexões, deadlocks, query longa, backup falho/atrasado e filesystem com pouco espaço. Cada regra possui severidade, condição e ação operacional na anotação.
+
+O MariaDB usa `prom/mysqld-exporter:v0.15.1` no profile `secondary` + `monitoring`. A role `dbops_mysql` recebe apenas `PROCESS`, `REPLICATION CLIENT` e `SELECT` para coleta. O exporter gera seu `.my.cnf` dentro do container a partir de variáveis locais; nenhuma senha é gravada no repositório. O dashboard `DBOps Lab — MariaDB Overview` consulta `mysql_up`, conexões, threads, queries lentas, uptime e temporárias em disco.
+
+O check `automation/check_mariadb_monitoring.py` valida o endpoint `/metrics`, o target `mariadb` no Prometheus, `mysql_up`, séries operacionais e regras carregadas. A porta do Grafana é configurável por `GRAFANA_PORT`; em máquinas com `3000` ocupada, use uma porta livre apenas no `.env` local.
 
 O provisionamento aplica `migrations/002_backup_status.sql`. A CLI registra cada tentativa em `public.dbops_backup_status`; o exporter publica os nomes prefixados `dbops_backup_status_age_seconds`, `dbops_backup_status_failed`, `dbops_backup_status_duration_seconds` e `dbops_backup_status_size_bytes`.
 
