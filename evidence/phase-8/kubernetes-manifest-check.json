@@ -1,0 +1,19 @@
+{
+  "check": "kubernetes-manifest",
+  "timestamp_utc": "2026-10-09T01:05:34.318667Z",
+  "manifest": "kubernetes\\postgres-statefulset.yaml",
+  "status": "passed",
+  "checks": {
+    "statefulset": true,
+    "persistent_volume_claim": true,
+    "config_map": true,
+    "secret": true,
+    "service": true,
+    "probes": true,
+    "backup_cronjob": true,
+    "separate_backup_claim": true,
+    "retention_policy": true,
+    "placeholder_secret": true
+  },
+  "duration_seconds": 0.0
+}
