@@ -1,0 +1,21 @@
+{
+  "incident": "database-down",
+  "isolation": {
+    "compose_file": "incidents\\docker-compose.database-down.yml",
+    "project_name": "dbops_incident_down",
+    "prometheus_file": "incidents\\prometheus.database-down.yml",
+    "prometheus_port": 19090
+  },
+  "mode": "dry-run",
+  "status": "planned",
+  "steps": [
+    "subir o Compose isolado dbops_incident_down",
+    "confirmar pg_up=1 no Prometheus isolado",
+    "parar somente o servi\u00e7o incident-postgres",
+    "confirmar pg_up=0 durante a indisponibilidade",
+    "subir novamente incident-postgres",
+    "confirmar pg_up=1 ap\u00f3s a recupera\u00e7\u00e3o",
+    "remover containers e volumes descart\u00e1veis do projeto isolado"
+  ],
+  "validated": false
+}
