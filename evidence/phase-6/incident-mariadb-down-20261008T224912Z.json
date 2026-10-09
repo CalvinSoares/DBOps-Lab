@@ -1,0 +1,21 @@
+{
+  "incident": "mariadb-down",
+  "isolation": {
+    "compose_file": "incidents\\docker-compose.mariadb-down.yml",
+    "persistent_volume": false,
+    "project_name": "dbops_incident_mariadb",
+    "service": "incident-mariadb"
+  },
+  "mode": "dry-run",
+  "status": "planned",
+  "steps": [
+    "subir o Compose descart\u00e1vel dbops_incident_mariadb",
+    "confirmar MariaDB saud\u00e1vel",
+    "parar somente o servi\u00e7o incident-mariadb",
+    "confirmar health status unhealthy ou container parado",
+    "subir novamente incident-mariadb",
+    "confirmar health check e SELECT 1",
+    "remover somente os recursos do projeto isolado"
+  ],
+  "validated": false
+}

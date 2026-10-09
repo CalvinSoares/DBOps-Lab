@@ -1,0 +1,36 @@
+{
+  "after": {
+    "duration_seconds": 0.531,
+    "repetitions": 20,
+    "result_count": 20,
+    "result_samples": [
+      "4166",
+      "4166",
+      "4166"
+    ]
+  },
+  "artifacts": [
+    "explain-before.tsv",
+    "explain-after.tsv",
+    "performance-schema.tsv",
+    "result.json"
+  ],
+  "before": {
+    "duration_seconds": 0.657,
+    "repetitions": 20,
+    "result_count": 20,
+    "result_samples": [
+      "4166",
+      "4166",
+      "4166"
+    ]
+  },
+  "database": "secondary_db",
+  "duration_ratio_before_over_after": 1.237,
+  "engine": "mariadb",
+  "index": "idx_performance_orders_region_status",
+  "query": "SELECT COUNT(*) FROM performance_orders WHERE region='north' AND status='open'",
+  "rows": 50000,
+  "timestamp": "2026-10-08T22:48:05.068148+00:00",
+  "validated": true
+}

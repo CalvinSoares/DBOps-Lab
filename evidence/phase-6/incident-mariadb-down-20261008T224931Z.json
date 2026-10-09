@@ -1,0 +1,30 @@
+{
+  "before": {
+    "container_id": "e2b1767b861d",
+    "health": "healthy",
+    "running": true,
+    "status": "running",
+    "timestamp": "2026-10-08T22:49:29.031039+00:00"
+  },
+  "before_query_ok": true,
+  "cleanup": "completed",
+  "error": "container MariaDB do game day n\u00e3o foi encontrado",
+  "error_type": "RuntimeError",
+  "incident": "mariadb-down",
+  "mode": "execute",
+  "project_name": "dbops_incident_mariadb",
+  "service": "incident-mariadb",
+  "started_at": "2026-10-08T22:49:14.948248+00:00",
+  "status": "failed",
+  "steps": [
+    {
+      "name": "stack isolado iniciado",
+      "status": "passed"
+    },
+    {
+      "name": "MariaDB dispon\u00edvel e consulta validada",
+      "status": "passed"
+    }
+  ],
+  "validated": false
+}
