@@ -1,0 +1,43 @@
+{
+  "database": "DBOpsLabSqlServer",
+  "edition": "Express Edition (64-bit)",
+  "instance": ".\\SQLEXPRESS",
+  "product_level": "RTM",
+  "product_version": "15.0.2000.5",
+  "backups": [
+    {
+      "type": "full",
+      "duration_seconds": 0.547,
+      "throughput_mb_per_second": 11.639,
+      "compression_requested": false,
+      "checksum": true,
+      "verifyonly": true,
+      "validated": true
+    },
+    {
+      "type": "differential",
+      "duration_seconds": 0.437,
+      "throughput_mb_per_second": 4.237,
+      "compression_requested": false,
+      "checksum": true,
+      "verifyonly": true,
+      "validated": true
+    },
+    {
+      "type": "transaction_log",
+      "duration_seconds": 0.454,
+      "throughput_mb_per_second": 1.754,
+      "compression_requested": false,
+      "checksum": true,
+      "verifyonly": true,
+      "validated": true
+    }
+  ],
+  "compression_test": {
+    "supported_by_current_edition": false,
+    "exit_code": 3,
+    "validated_limitation": true
+  },
+  "timestamp": "2026-10-08T22:56:52Z",
+  "validated": true
+}

@@ -1,0 +1,24 @@
+{
+  "database": "DBOpsLabSqlServer",
+  "instance": ".\\SQLEXPRESS",
+  "query_store_state": "READ_WRITE",
+  "query": "SELECT COUNT(*) AS row_count FROM dbo.lab_probe WHERE id = 1",
+  "repetitions": 20,
+  "elapsed_seconds": 3.047,
+  "query_store_snapshot": {
+    "query_id": 2,
+    "count_executions_latest_interval": 9,
+    "avg_duration_ms": 0.032,
+    "avg_cpu_ms": 0.032,
+    "avg_logical_io_reads": 2.0
+  },
+  "wait_snapshot": {
+    "top_workload_wait": "PAGEIOLATCH_SH",
+    "top_workload_waiting_tasks": 6675,
+    "top_workload_wait_time_ms": 46782,
+    "top_workload_signal_wait_time_ms": 15,
+    "other_observed_waits": ["PARALLEL_REDO_WORKER_WAIT_WORK", "IO_COMPLETION", "LCK_M_S", "THREADPOOL", "BACKUPIO"]
+  },
+  "validated": true,
+  "timestamp": "2026-10-08T23:00:12Z"
+}

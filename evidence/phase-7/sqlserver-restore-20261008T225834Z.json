@@ -1,0 +1,21 @@
+{
+  "database_source": "DBOpsLabSqlServer",
+  "target_database": "DBOpsLabSqlServer_Restore",
+  "full": {
+    "artifact": "DBOpsLabSqlServer_full_20261008T225650Z.bak",
+    "restore_seconds": 0.694
+  },
+  "differential": {
+    "artifact": "DBOpsLabSqlServer_differential_20261008T225651Z.bak",
+    "restore_seconds": 0.447
+  },
+  "transaction_log": {
+    "artifact": "DBOpsLabSqlServer_log_20261008T225651Z.trn",
+    "restore_seconds": 0.155
+  },
+  "state": "ONLINE",
+  "dbcc_checkdb": "no errors reported",
+  "lab_probe_rows": 1,
+  "validated": true,
+  "timestamp": "2026-10-08T22:58:34Z"
+}
