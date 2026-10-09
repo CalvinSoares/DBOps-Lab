@@ -1,0 +1,10 @@
+{
+  "artifact": "secondary_db_20261008T224540Z.sql.gz",
+  "artifact_type": "mariadb_logical",
+  "created_at": "2026-10-08T22:45:40.786943+00:00",
+  "database": "secondary_db",
+  "duration_seconds": 0.516,
+  "engine": "mariadb",
+  "sha256": "24deb503ae18647c09d4d540f8a7234d510fac779751045aa22e7cae5d23839d",
+  "size_bytes": 1281
+}
