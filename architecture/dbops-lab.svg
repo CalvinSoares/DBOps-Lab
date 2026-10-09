@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="780" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
+  <title id="title">Arquitetura do DB Operations Lab</title>
+  <desc id="desc">CLI Python opera PostgreSQL, MariaDB e SQL Server Windows; backups e observabilidade alimentam evidências e runbooks.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,3 L0,6 z" fill="#334155"/></marker>
+    <style>
+      .box { stroke: #334155; stroke-width: 2; rx: 14; }
+      .title { font: 700 20px Segoe UI, Arial, sans-serif; fill: #0f172a; }
+      .text { font: 15px Segoe UI, Arial, sans-serif; fill: #334155; }
+      .small { font: 13px Segoe UI, Arial, sans-serif; fill: #475569; }
+      .line { stroke: #334155; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1400" height="780" fill="#f8fafc"/>
+  <text x="700" y="42" text-anchor="middle" class="title" font-size="28">DB Operations Lab — Resilient Multi-Database Platform</text>
+  <text x="700" y="68" text-anchor="middle" class="small">Provisionamento · backup/restore · performance · observabilidade · incidentes</text>
+
+  <rect x="40" y="150" width="220" height="120" fill="#dbeafe" class="box"/>
+  <text x="150" y="188" text-anchor="middle" class="title">CLI Python</text>
+  <text x="150" y="216" text-anchor="middle" class="text">dbops.py / mysqlops.py</text>
+  <text x="150" y="240" text-anchor="middle" class="text">sqlserverops.py</text>
+
+  <rect x="350" y="110" width="270" height="170" fill="#dcfce7" class="box"/>
+  <text x="485" y="148" text-anchor="middle" class="title">PostgreSQL principal</text>
+  <text x="485" y="177" text-anchor="middle" class="text">volume + migrations</text>
+  <text x="485" y="202" text-anchor="middle" class="text">WAL + PITR + tuning</text>
+  <text x="485" y="237" text-anchor="middle" class="small">Docker Compose / Linux</text>
+
+  <rect x="350" y="330" width="270" height="150" fill="#fef3c7" class="box"/>
+  <text x="485" y="368" text-anchor="middle" class="title">MariaDB secundário</text>
+  <text x="485" y="397" text-anchor="middle" class="text">backup + restore</text>
+  <text x="485" y="422" text-anchor="middle" class="text">Performance Schema</text>
+  <text x="485" y="452" text-anchor="middle" class="small">profile secondary</text>
+
+  <rect x="350" y="530" width="270" height="150" fill="#fee2e2" class="box"/>
+  <text x="485" y="568" text-anchor="middle" class="title">SQL Server Windows</text>
+  <text x="485" y="597" text-anchor="middle" class="text">full/differential/log</text>
+  <text x="485" y="622" text-anchor="middle" class="text">restore + Query Store/waits</text>
+  <text x="485" y="652" text-anchor="middle" class="small">Express validado / Developer documentado</text>
+
+  <rect x="770" y="145" width="250" height="145" fill="#ede9fe" class="box"/>
+  <text x="895" y="183" text-anchor="middle" class="title">Backups e recovery</text>
+  <text x="895" y="212" text-anchor="middle" class="text">dump / basebackup</text>
+  <text x="895" y="237" text-anchor="middle" class="text">WAL / PITR / CHECKSUM</text>
+  <text x="895" y="266" text-anchor="middle" class="small">artefatos + manifestos</text>
+
+  <rect x="770" y="350" width="250" height="145" fill="#e0f2fe" class="box"/>
+  <text x="895" y="388" text-anchor="middle" class="title">Prometheus + Grafana</text>
+  <text x="895" y="417" text-anchor="middle" class="text">exporters PostgreSQL/MariaDB</text>
+  <text x="895" y="442" text-anchor="middle" class="text">alertas + dashboards</text>
+  <text x="895" y="471" text-anchor="middle" class="small">métricas operacionais</text>
+
+  <rect x="1110" y="220" width="240" height="145" fill="#f1f5f9" class="box"/>
+  <text x="1230" y="258" text-anchor="middle" class="title">Incidentes</text>
+  <text x="1230" y="287" text-anchor="middle" class="text">runbooks + game days</text>
+  <text x="1230" y="312" text-anchor="middle" class="text">detecção / mitigação</text>
+  <text x="1230" y="341" text-anchor="middle" class="small">evidência reproduzível</text>
+
+  <rect x="1110" y="460" width="240" height="145" fill="#f1f5f9" class="box"/>
+  <text x="1230" y="498" text-anchor="middle" class="title">Git + evidências</text>
+  <text x="1230" y="527" text-anchor="middle" class="text">tests / benchmarks</text>
+  <text x="1230" y="552" text-anchor="middle" class="text">rounds / matriz</text>
+  <text x="1230" y="581" text-anchor="middle" class="small">sem segredos ou dumps</text>
+
+  <path d="M260 210 H350" class="line"/>
+  <path d="M260 210 C300 210 300 405 350 405" class="line"/>
+  <path d="M260 210 C300 210 300 605 350 605" class="line"/>
+  <path d="M620 195 H770" class="line"/>
+  <path d="M620 405 H770" class="line"/>
+  <path d="M620 605 C700 605 700 450 770 450" class="line"/>
+  <path d="M1020 220 H1110" class="line"/>
+  <path d="M1020 420 C1060 420 1060 292 1110 292" class="line"/>
+  <path d="M1020 430 C1060 430 1060 530 1110 530" class="line"/>
+  <path d="M620 265 C800 265 900 500 1110 530" class="line"/>
+</svg>

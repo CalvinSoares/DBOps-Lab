@@ -6,7 +6,7 @@ Repositório: [github.com/CalvinSoares/DBOps-Lab](https://github.com/CalvinSoare
 
 ## Sobre o projeto
 
-Este projeto simula uma plataforma operacional de bancos de dados para um ambiente de e-commerce ou chamados. O PostgreSQL é o banco principal e concentra a implementação mais completa. MySQL/MariaDB e SQL Server são extensões operacionais planejadas para demonstrar procedimentos equivalentes em outros ecossistemas.
+Este projeto simula uma plataforma operacional de bancos de dados para um ambiente de e-commerce ou chamados. O PostgreSQL é o banco principal e concentra a implementação mais completa. MariaDB e SQL Server são extensões operacionais validadas com profundidade proporcional ao ambiente disponível.
 
 O laboratório foi construído para demonstrar:
 
@@ -23,35 +23,9 @@ O laboratório foi construído para demonstrar:
 
 ## Arquitetura
 
-~~~text
-                         ┌─────────────────────┐
-                         │  CLI Python dbops   │
-                         │  provision/backup   │
-                         │  restore/PITR/check │
-                         └──────────┬──────────┘
-                                    │
-┌──────────────────┐       ┌────────▼─────────┐       ┌──────────────────┐
-│ Aplicação/testes │──────▶│ PostgreSQL 16.4  │──────▶│ Backup + WAL     │
-└──────────────────┘       │ volume persist.  │       │ dump/basebackup  │
-                           └────────┬─────────┘       └──────────────────┘
-                                    │ métricas
-                           ┌────────▼─────────┐
-                           │ PostgreSQL       │
-                           │ Exporter         │
-                           └────────┬─────────┘
-                                    │ scrape
-                    ┌───────────────▼───────────────┐
-                    │ Prometheus                    │
-                    │ séries e alertas               │
-                    └───────────────┬───────────────┘
-                                    │ PromQL
-                    ┌───────────────▼───────────────┐
-                    │ Grafana                       │
-                    │ dashboard operacional         │
-                    └───────────────────────────────┘
-~~~
+![Arquitetura visual do DB Operations Lab](architecture/dbops-lab.svg)
 
-O ambiente principal roda em Docker Compose. O PostgreSQL usa volume persistente. Backups, WAL e evidências ficam separados do volume de dados para que possam ser inspecionados e restaurados.
+O ambiente principal roda em Docker Compose. A CLI Python coordena provisionamento, health checks, backup, restore e diagnósticos. PostgreSQL é o caminho crítico; MariaDB roda como extensão no perfil secondary; SQL Server é executado separadamente no Windows. Backups, WAL e evidências ficam separados dos volumes de dados para que possam ser inspecionados e restaurados.
 
 ## Evidências de competência
 
@@ -61,6 +35,8 @@ As principais evidências já produzidas são:
 - backup e PITR: [postgres/](postgres/) e [evidence/phase-0/round-007.md](evidence/phase-0/round-007.md);
 - tuning antes/depois: [benchmarks/postgres/runs/20261004T000351Z_a48486b9/result.json](benchmarks/postgres/runs/20261004T000351Z_a48486b9/result.json);
 - observabilidade validada: [evidence/phase-0/monitoring-result-20261004T165141Z.json](evidence/phase-0/monitoring-result-20261004T165141Z.json);
+- MariaDB operacional: [evidence/phase-6/round-019.md](evidence/phase-6/round-019.md);
+- SQL Server backup/restore/performance: [evidence/phase-7/round-022.md](evidence/phase-7/round-022.md);
 - game day de indisponibilidade: [evidence/phase-5/incident-database-down-20261004T165037Z.json](evidence/phase-5/incident-database-down-20261004T165037Z.json);
 - runbooks operacionais: [incidents/](incidents/).
 
@@ -72,9 +48,10 @@ Os números apresentados no projeto vêm de artefatos de execução. Metas de RP
 - Python 3.12 ou compatível;
 - PowerShell, Linux shell ou ambiente equivalente;
 - pelo menos 2 GB livres para imagens, banco e backups;
-- portas livres: 15432, 9090, 3000, 9187 e 19100.
+- portas livres conforme o perfil usado: 15432, 13306, 9090, 3000, 9187, 9188 e 19100;
+- SQL Server Windows/Express ou Developer separado para a extensão SQL Server.
 
-O caminho principal de execução é Linux via Docker/WSL2. SQL Server será documentado separadamente para Windows/VM quando essa extensão for adicionada.
+O caminho principal de execução é Linux via Docker/WSL2. SQL Server é documentado separadamente para Windows/VM em [sqlserver/README.md](sqlserver/README.md). Se a porta 3000 estiver ocupada, defina `GRAFANA_PORT` no `.env` e use a porta escolhida nos links locais.
 
 ## Instalação rápida
 
@@ -188,8 +165,9 @@ O benchmark registra:
 Subir o banco junto com Prometheus, Grafana e exporters:
 
 ~~~powershell
-docker compose --profile monitoring up -d
+docker compose --profile monitoring --profile secondary up -d
 python automation/check_monitoring.py
+python automation/check_mariadb_monitoring.py
 ~~~
 
 Acessos locais:
@@ -197,9 +175,10 @@ Acessos locais:
 - Grafana: [http://localhost:3000](http://localhost:3000)
 - Prometheus: [http://localhost:9090](http://localhost:9090)
 - PostgreSQL Exporter: [http://localhost:9187/metrics](http://localhost:9187/metrics)
+- MariaDB Exporter: [http://localhost:9188/metrics](http://localhost:9188/metrics)
 - Node Exporter: [http://localhost:19100/metrics](http://localhost:19100/metrics)
 
-O dashboard acompanha disponibilidade, conexões, tamanho, transações, deadlocks, queries ativas, idade de query, locks, idade/falha de backup, CPU e memória.
+O dashboard PostgreSQL acompanha disponibilidade, conexões, tamanho, transações, deadlocks, queries ativas, idade de query, locks, idade/falha de backup, CPU e memória. O dashboard MariaDB acompanha disponibilidade, conexões, threads ativos, queries lentas, uptime e temporárias em disco.
 
 ## Incidentes e game days
 
@@ -228,7 +207,7 @@ Operações destrutivas no banco principal, como parar o serviço ou preencher d
 
 ## Status operacional atual
 
-O núcleo PostgreSQL, os backups, PITR, tuning, observabilidade e os principais game days estão implementados e possuem evidências. MySQL/MariaDB e SQL Server ainda serão adicionados como extensões operacionais. Kubernetes é opcional e não substitui backup, replicação ou alta disponibilidade.
+O núcleo PostgreSQL, os backups, PITR, tuning, observabilidade e os principais game days estão implementados e possuem evidências. O ciclo operacional do MariaDB foi validado com provisionamento, health check, backup lógico, verificação de checksum, restore separado, consistência pós-restore, Performance Schema, game day isolado de indisponibilidade e coleta Prometheus/Grafana. A Fase 7 de SQL Server foi validada no Windows com Express, full/differential/log, CHECKSUM, restore separado e análise de Query Store/waits; a limitação de compressão da edição está documentada. Kubernetes possui manifests opcionais para PostgreSQL, mas a validação runtime depende de um cluster acessível e não substitui backup, replicação ou alta disponibilidade.
 
 ## Estrutura do repositório
 
@@ -243,6 +222,7 @@ O núcleo PostgreSQL, os backups, PITR, tuning, observabilidade e os principais 
 ├── mysql/            # extensão MySQL/MariaDB
 ├── sqlserver/        # documentação SQL Server/Windows
 ├── kubernetes/       # etapa opcional stateful
+├── portfolio/        # descrição pública e bullets de currículo
 ├── evidence/         # resultados reproduzíveis das execuções
 └── tests/            # testes automatizados
 ~~~

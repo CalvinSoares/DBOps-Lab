@@ -1,6 +1,10 @@
-# Arquitetura inicial
+# Arquitetura do DB Operations Lab
 
-## Estado da Fase 0
+![Arquitetura do DB Operations Lab](dbops-lab.svg)
+
+O diagrama representa o estado atual do laboratório após as fases PostgreSQL, MariaDB e SQL Server. O caminho crítico é PostgreSQL; MariaDB e SQL Server demonstram extensões operacionais com profundidade proporcional ao ambiente disponível.
+
+## Estado inicial da Fase 0
 
 Nesta fase, o único banco ativo é o PostgreSQL. Prometheus e Grafana existem como perfil opcional de Compose para validar a fundação de observabilidade, mas ainda não coletam métricas do banco.
 
@@ -22,11 +26,12 @@ Nesta fase, o único banco ativo é o PostgreSQL. Prometheus e Grafana existem c
 └──────────────────────┘       └──────────────────────┘
 ```
 
-## Decisões
+## Decisões atuais
 
 - PostgreSQL é o caminho crítico e será aprofundado antes dos bancos secundários.
-- Prometheus e Grafana usam profiles para não obrigar observabilidade incompleta na primeira execução.
-- A role do exporter não é criada nesta fase; ela será criada com privilégios mínimos na fase de provisionamento.
+- Prometheus e Grafana usam profiles para manter o stack opcional.
+- Exporters usam privilégios mínimos e credenciais somente no `.env` local.
 - Volumes do Compose são persistentes, mas ainda não constituem uma estratégia de backup.
 - Portas locais previstas: PostgreSQL `5432`, Prometheus `9090` e Grafana `3000`.
-- MySQL/MariaDB, SQL Server e Kubernetes entram em fases posteriores e não fazem parte do gate da Fase 0.
+- MariaDB está validado com exporter e game day; SQL Server está validado no Windows/Express com limitação de compressão documentada.
+- Kubernetes permanece opcional e não representa HA automaticamente.
