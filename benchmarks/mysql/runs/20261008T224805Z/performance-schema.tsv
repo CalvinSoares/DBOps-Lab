@@ -1,0 +1,7 @@
+INSERT INTO `performance_orders` ( `region` , STATUS , `amount` , `created_at` ) WITH RECURSIVE `sequence_numbers` ( `n` ) AS ( SELECT ? UNION ALL SELECT `n` + ? FROM `sequence_numbers` WHERE `n` < ? ) SELECT `ELT` ( MOD ( `n` , ? ) + ?, ... ) , `ELT` ( MOD ( `n` , ? ) + ?, ... ) , MOD ( `n` * ?, ... ) / ? , NOW ( ) - INTERVAL MOD ( `n` , ? ) SQL_TSI_DAY FROM `sequence_numbers` 	1	322.160	100000	50000
+SELECT COUNT ( * ) FROM `performance_orders` WHERE `region` = ? AND STATUS = ? 	40	184.694	1083320	0
+CREATE INDEX `idx_performance_orders_region_status` ON `performance_orders` ( `region` , STATUS ) 	1	89.203	0	0
+TRUNCATE TABLE `performance_orders` 	1	14.129	0	0
+CREATE TABLE IF NOT EXISTS `performance_orders` ( `order_id` INT8 UNSIGNED NOT NULL AUTO_INCREMENT , `region` VARCHARACTER (?) NOT NULL , STATUS VARCHARACTER (?) NOT NULL , `amount` DECIMAL (...) NOT NULL , `created_at` DATETIME NOT NULL , PRIMARY KEY ( `order_id` ) ) ENGINE = `InnoDB` 	1	12.100	0	0
+ANALYZE TABLE `performance_orders` 	1	4.220	0	0
+EXPLAIN SELECT COUNT ( * ) FROM `performance_orders` WHERE `region` = ? AND STATUS = ? 	2	0.638	0	0

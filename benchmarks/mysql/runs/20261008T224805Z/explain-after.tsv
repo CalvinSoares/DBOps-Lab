@@ -1,0 +1,1 @@
+1	SIMPLE	performance_orders	ref	idx_performance_orders_region_status	idx_performance_orders_region_status	132	const,const	4166	Using where; Using index
