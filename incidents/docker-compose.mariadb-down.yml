@@ -1,0 +1,11 @@
+services:
+  incident-mariadb:
+    image: ${MYSQL_IMAGE}
+    environment:
+      MARIADB_DATABASE: incident_db
+      MARIADB_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    healthcheck:
+      test: ["CMD-SHELL", "healthcheck.sh --connect --innodb_initialized"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
