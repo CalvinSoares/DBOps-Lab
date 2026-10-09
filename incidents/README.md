@@ -23,6 +23,7 @@ Esta pasta contém runbooks para operar o laboratório sob falha. O objetivo é 
 | Lock/deadlock | [`06-lock.md`](06-lock.md) | `--execute` | game day controlado |
 | Atraso de réplica | [`07-replication-lag.md`](07-replication-lag.md) | planejamento | não aplicável sem réplica |
 | Backup inválido | [`08-invalid-backup.md`](08-invalid-backup.md) | `--execute` | cópia isolada |
+| MariaDB indisponível | [`09-mariadb-down.md`](09-mariadb-down.md) | `python automation/run_mariadb_down.py --execute` | game day isolado |
 
 ## Comandos
 
@@ -32,6 +33,7 @@ python automation/run_incident.py slow-query --execute --duration 20 --observe-p
 python automation/run_incident.py lock --execute --observe-prometheus
 python automation/run_incident.py backup-invalid --execute
 python automation/run_incident.py database-down
+python automation/run_mariadb_down.py
 ```
 
 `--observe-prometheus` captura a métrica selecionada antes, durante e depois do incidente. O modo sem `--execute` retorna `0` e registra um plano com status `planned`. Uma execução real validada retorna `0`; falhas de configuração, banco ou validação retornam códigos não zero.

@@ -63,3 +63,41 @@ groups:
         annotations:
           summary: "Pouco espaço disponível no filesystem monitorado"
           description: "Menos de 15% está disponível. Ação: conter crescimento, validar WAL/backups e liberar espaço conforme runbook."
+
+  - name: dbops-mariadb
+    rules:
+      - alert: MariaDBExporterDown
+        expr: up{job="mariadb"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Exporter MariaDB indisponível"
+          description: "O Prometheus não consegue coletar o exporter MariaDB. Ação: verificar exporter, conectividade, credenciais e health check do banco."
+
+      - alert: MariaDBDown
+        expr: mysql_up{job="mariadb"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "MariaDB não está disponível para o exporter"
+          description: "O exporter respondeu, mas não conseguiu consultar o MariaDB. Ação: verificar processo, porta, permissões e logs."
+
+      - alert: MariaDBConnectionsHigh
+        expr: mysql_global_status_threads_connected{job="mariadb"} > 50
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Muitas conexões no MariaDB"
+          description: "Mais de 50 conexões estão abertas. Ação: verificar pool, sessões e limite de conexões antes de aumentá-lo."
+
+      - alert: MariaDBSlowQueriesIncreasing
+        expr: increase(mysql_global_status_slow_queries{job="mariadb"}[5m]) > 0
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Queries lentas detectadas no MariaDB"
+          description: "O contador de queries lentas aumentou. Ação: investigar Performance Schema, digest e plano da consulta."
