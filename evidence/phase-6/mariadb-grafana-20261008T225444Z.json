@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-10-08T22:54:44Z",
+  "grafana_port": 33000,
+  "dashboards": {
+    "dbops-postgres": {
+      "panels": 10,
+      "uid": "dbops-postgres"
+    },
+    "dbops-mariadb": {
+      "panels": 5,
+      "uid": "dbops-mariadb"
+    }
+  },
+  "validated": true
+}

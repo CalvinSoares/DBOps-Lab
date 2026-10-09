@@ -1,0 +1,51 @@
+{
+  "after": {
+    "container_id": "76a9985bf17f",
+    "health": "healthy",
+    "running": true,
+    "status": "running",
+    "timestamp": "2026-10-08T22:49:56.205667+00:00"
+  },
+  "after_query_ok": true,
+  "before": {
+    "container_id": "76a9985bf17f",
+    "health": "healthy",
+    "running": true,
+    "status": "running",
+    "timestamp": "2026-10-08T22:49:47.144437+00:00"
+  },
+  "before_query_ok": true,
+  "cleanup": "completed",
+  "during": {
+    "container_id": "76a9985bf17f",
+    "health": "unhealthy",
+    "running": false,
+    "status": "exited",
+    "timestamp": "2026-10-08T22:49:49.443154+00:00"
+  },
+  "incident": "mariadb-down",
+  "mode": "execute",
+  "project_name": "dbops_incident_mariadb",
+  "service": "incident-mariadb",
+  "started_at": "2026-10-08T22:49:37.212264+00:00",
+  "status": "validated",
+  "steps": [
+    {
+      "name": "stack isolado iniciado",
+      "status": "passed"
+    },
+    {
+      "name": "MariaDB dispon\u00edvel e consulta validada",
+      "status": "passed"
+    },
+    {
+      "name": "indisponibilidade observada",
+      "status": "passed"
+    },
+    {
+      "name": "servi\u00e7o recuperado e consulta validada",
+      "status": "passed"
+    }
+  ],
+  "validated": true
+}

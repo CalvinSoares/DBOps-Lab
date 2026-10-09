@@ -1,0 +1,96 @@
+{
+  "exporter": {
+    "contains_mysql_up": true,
+    "metrics_bytes": 192535,
+    "url": "http://127.0.0.1:9188/metrics"
+  },
+  "finished_at": "2026-10-08T22:53:43.753500+00:00",
+  "prometheus": {
+    "database_value": "1",
+    "queries": {
+      "connections": [
+        {
+          "metric": {
+            "__name__": "mysql_global_status_threads_connected",
+            "instance": "mariadb-exporter:9104",
+            "job": "mariadb"
+          },
+          "value": [
+            1791500023.744,
+            "1"
+          ]
+        }
+      ],
+      "database_up": [
+        {
+          "metric": {
+            "__name__": "mysql_up",
+            "instance": "mariadb-exporter:9104",
+            "job": "mariadb"
+          },
+          "value": [
+            1791500023.742,
+            "1"
+          ]
+        }
+      ],
+      "slow_queries": [
+        {
+          "metric": {
+            "__name__": "mysql_global_status_slow_queries",
+            "instance": "mariadb-exporter:9104",
+            "job": "mariadb"
+          },
+          "value": [
+            1791500023.751,
+            "0"
+          ]
+        }
+      ],
+      "target_up": [
+        {
+          "metric": {
+            "__name__": "up",
+            "instance": "mariadb-exporter:9104",
+            "job": "mariadb"
+          },
+          "value": [
+            1791500023.738,
+            "1"
+          ]
+        }
+      ],
+      "threads_running": [
+        {
+          "metric": {
+            "__name__": "mysql_global_status_threads_running",
+            "instance": "mariadb-exporter:9104",
+            "job": "mariadb"
+          },
+          "value": [
+            1791500023.746,
+            "1"
+          ]
+        }
+      ],
+      "uptime": [
+        {
+          "metric": {
+            "__name__": "mysql_global_status_uptime",
+            "instance": "mariadb-exporter:9104",
+            "job": "mariadb"
+          },
+          "value": [
+            1791500023.753,
+            "363"
+          ]
+        }
+      ]
+    },
+    "target_value": "1",
+    "url": "http://127.0.0.1:9090"
+  },
+  "required_series_missing": [],
+  "started_at": "2026-10-08T22:53:43.578657+00:00",
+  "validated": true
+}
